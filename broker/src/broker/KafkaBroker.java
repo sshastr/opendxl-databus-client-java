@@ -5,7 +5,7 @@
 package broker;
 
 import kafka.server.KafkaConfig;
-import kafka.server.KafkaServerStartable;
+import kafka.server.KafkaServer;
 import org.apache.commons.io.FileUtils;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
@@ -18,7 +18,7 @@ public class KafkaBroker {
 
     private Properties brokerConfig;
     private Zookeeper zookeeper;
-    private KafkaServerStartable broker;
+    private KafkaServer broker;
     private static final Logger LOG = LoggerFactory.getLogger(KafkaBroker.class);
 
     public KafkaBroker(final Properties brokerConfig) {
@@ -36,7 +36,7 @@ public class KafkaBroker {
                         }));
 
 
-        broker = new KafkaServerStartable(new KafkaConfig(brokerConfig));
+        broker = new KafkaServer(new KafkaConfig(brokerConfig), null, null, false);
         broker.startup();
         LOG.info("Kafka broker started: " + brokerConfig.getProperty("host.name")
                 .concat(":")

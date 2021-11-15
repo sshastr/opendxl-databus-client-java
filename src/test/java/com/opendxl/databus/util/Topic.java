@@ -77,13 +77,13 @@ public class Topic {
                 } });
 
             return KafkaZkClient.apply(connectString,
-                    JaasUtils.isZkSecurityEnabled(),
+                    JaasUtils.isZkSaslEnabled(),
                     30000,
                     30000,
                     1000,
                     new SystemTime(),
                     "kafka.server",
-                    "SessionExpireListener", null);
+                    "SessionExpireListener", null , null);
         }
     }
 }
