@@ -64,7 +64,7 @@ dependencies {
     implementation ('org.apache.kafka:kafka-streams:2.8.1') {
         exclude group: 'org.scala-lang', module: 'scala-reflect'
     }
-    implementation 'org.scala-lang:scala-reflect:2.13.6'
+    implementation 'org.scala-lang:scala-reflect:2.13.7'
     implementation 'org.lz4:lz4-java:1.7.1'
     implementation 'org.apache.avro:avro:1.9.0'
     implementation 'com.google.code.gson:gson:2.8.5'
@@ -73,10 +73,13 @@ dependencies {
     implementation 'org.slf4j:slf4j-api:1.7.30'
     implementation 'net.sf.jopt-simple:jopt-simple:5.0.4'
     implementation 'net.mguenther.kafka:kafka-junit:2.8.0'
+    implementation 'com.codahale.metrics:metrics-core:3.0.2'
+    implementation 'com.codahale.metrics:metrics-graphite:3.0.2'
+    implementation 'io.dropwizard.metrics:metrics-core:4.2.0'
     testImplementation('org.apache.kafka:kafka_2.13:2.8.1') {
-        exclude group: 'org.scala-lang', module: 'scala-reflect'
+//        exclude group: 'org.scala-lang', module: 'scala-reflect'
     }
-    testImplementation 'org.scala-lang:scala-reflect:2.13.6'
+    testImplementation 'org.scala-lang:scala-reflect:2.13.7'
     testImplementation 'org.apache.zookeeper:zookeeper:3.6.3'
     testImplementation('io.netty:netty-all:4.1.43.Final') {
         force = true
@@ -90,7 +93,7 @@ dependencies {
         exclude group: 'org.scala-lang', module: 'scala-reflect'
         exclude group: 'org.lz4', module: 'lz4-java'
     }
-    kafkaInMemory 'org.scala-lang:scala-reflect:2.12.11'
+    kafkaInMemory 'org.scala-lang:scala-reflect:2.13.7'
     kafkaInMemory 'org.lz4:lz4-java:1.7.1'
     kafkaInMemory 'commons-io:commons-io:2.7'
 
